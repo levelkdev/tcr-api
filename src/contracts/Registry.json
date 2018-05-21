@@ -1,234 +1,12 @@
 [
   {
     "constant": true,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "isWhitelisted",
-    "outputs": [
-      {
-        "name": "whitelisted",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      },
-      {
-        "name": "_amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "withdraw",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "exit",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "challengeExists",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      },
-      {
-        "name": "_amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "deposit",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      },
-      {
-        "name": "_data",
-        "type": "string"
-      }
-    ],
-    "name": "challenge",
-    "outputs": [
-      {
-        "name": "challengeID",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
     "inputs": [],
     "name": "version",
     "outputs": [
       {
         "name": "",
         "type": "string"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "canBeWhitelisted",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "challengeCanBeResolved",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_challengeID",
-        "type": "uint256"
-      },
-      {
-        "name": "_salt",
-        "type": "uint256"
-      }
-    ],
-    "name": "claimReward",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      },
-      {
-        "name": "_amount",
-        "type": "uint256"
-      },
-      {
-        "name": "_data",
-        "type": "string"
-      }
-    ],
-    "name": "apply",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "updateStatus",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "appWasMade",
-    "outputs": [
-      {
-        "name": "exists",
-        "type": "bool"
       }
     ],
     "payable": false,
@@ -274,56 +52,6 @@
     "constant": true,
     "inputs": [
       {
-        "name": "_challengeID",
-        "type": "uint256"
-      },
-      {
-        "name": "_voter",
-        "type": "address"
-      }
-    ],
-    "name": "tokenClaims",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_voter",
-        "type": "address"
-      },
-      {
-        "name": "_challengeID",
-        "type": "uint256"
-      },
-      {
-        "name": "_salt",
-        "type": "uint256"
-      }
-    ],
-    "name": "voterReward",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
         "name": "",
         "type": "bytes32"
       }
@@ -348,25 +76,6 @@
       },
       {
         "name": "challengeID",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_challengeID",
-        "type": "uint256"
-      }
-    ],
-    "name": "determineReward",
-    "outputs": [
-      {
-        "name": "",
         "type": "uint256"
       }
     ],
@@ -439,13 +148,18 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "name": "listingHash",
         "type": "bytes32"
       },
       {
         "indexed": false,
         "name": "deposit",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "appEndDate",
         "type": "uint256"
       },
       {
@@ -461,24 +175,29 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "name": "listingHash",
         "type": "bytes32"
       },
       {
         "indexed": false,
-        "name": "deposit",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "pollID",
+        "name": "challengeID",
         "type": "uint256"
       },
       {
         "indexed": false,
         "name": "data",
         "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "commitEndDate",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "revealEndDate",
+        "type": "uint256"
       }
     ],
     "name": "_Challenge",
@@ -488,7 +207,7 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "name": "listingHash",
         "type": "bytes32"
       },
@@ -510,7 +229,7 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "name": "listingHash",
         "type": "bytes32"
       },
@@ -532,19 +251,19 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "name": "listingHash",
         "type": "bytes32"
       }
     ],
-    "name": "_NewListingWhitelisted",
+    "name": "_ApplicationWhitelisted",
     "type": "event"
   },
   {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "name": "listingHash",
         "type": "bytes32"
       }
@@ -556,7 +275,7 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "name": "listingHash",
         "type": "bytes32"
       }
@@ -568,8 +287,47 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
+        "name": "listingHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "_ListingWithdrawn",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "listingHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "_TouchAndRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "listingHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
         "name": "challengeID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "rewardPool",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "totalTokens",
         "type": "uint256"
       }
     ],
@@ -580,8 +338,23 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
+        "name": "listingHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
         "name": "challengeID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "rewardPool",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "totalTokens",
         "type": "uint256"
       }
     ],
@@ -592,12 +365,7 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "name": "voter",
-        "type": "address"
-      },
-      {
-        "indexed": false,
+        "indexed": true,
         "name": "challengeID",
         "type": "uint256"
       },
@@ -609,5 +377,296 @@
     ],
     "name": "_RewardClaimed",
     "type": "event"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_listingHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "name": "_data",
+        "type": "string"
+      }
+    ],
+    "name": "apply",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_listingHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "deposit",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_listingHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdraw",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_listingHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "exit",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_listingHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "_data",
+        "type": "string"
+      }
+    ],
+    "name": "challenge",
+    "outputs": [
+      {
+        "name": "challengeID",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_listingHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "updateStatus",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_challengeID",
+        "type": "uint256"
+      },
+      {
+        "name": "_salt",
+        "type": "uint256"
+      }
+    ],
+    "name": "claimReward",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_voter",
+        "type": "address"
+      },
+      {
+        "name": "_challengeID",
+        "type": "uint256"
+      },
+      {
+        "name": "_salt",
+        "type": "uint256"
+      }
+    ],
+    "name": "voterReward",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_listingHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "canBeWhitelisted",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_listingHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "isWhitelisted",
+    "outputs": [
+      {
+        "name": "whitelisted",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_listingHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "appWasMade",
+    "outputs": [
+      {
+        "name": "exists",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_listingHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "challengeExists",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_listingHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "challengeCanBeResolved",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_challengeID",
+        "type": "uint256"
+      }
+    ],
+    "name": "determineReward",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_challengeID",
+        "type": "uint256"
+      },
+      {
+        "name": "_voter",
+        "type": "address"
+      }
+    ],
+    "name": "tokenClaims",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
   }
 ]

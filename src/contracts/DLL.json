@@ -81,7 +81,12 @@
       }
     ],
     "name": "remove",
-    "outputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
@@ -126,7 +131,12 @@
       }
     ],
     "name": "insert",
-    "outputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
@@ -137,6 +147,18 @@
       {
         "name": "self",
         "type": "DLL.Data storage"
+      },
+      {
+        "name": "_prev",
+        "type": "uint256"
+      },
+      {
+        "name": "_curr",
+        "type": "uint256"
+      },
+      {
+        "name": "_next",
+        "type": "uint256"
       }
     ],
     "name": "isEmpty",
@@ -156,6 +178,10 @@
       {
         "name": "self",
         "type": "DLL.Data storage"
+      },
+      {
+        "name": "_curr",
+        "type": "uint256"
       }
     ],
     "name": "getStart",
