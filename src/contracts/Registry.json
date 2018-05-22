@@ -2,11 +2,39 @@
   {
     "constant": true,
     "inputs": [],
-    "name": "version",
+    "name": "name",
     "outputs": [
       {
         "name": "",
         "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "INITIAL_CHALLENGE_NONCE",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "challengeFactory",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
       }
     ],
     "payable": false,
@@ -24,24 +52,8 @@
     "name": "challenges",
     "outputs": [
       {
-        "name": "rewardPool",
-        "type": "uint256"
-      },
-      {
-        "name": "challenger",
+        "name": "",
         "type": "address"
-      },
-      {
-        "name": "resolved",
-        "type": "bool"
-      },
-      {
-        "name": "stake",
-        "type": "uint256"
-      },
-      {
-        "name": "totalTokens",
-        "type": "uint256"
       }
     ],
     "payable": false,
@@ -71,11 +83,29 @@
         "type": "address"
       },
       {
-        "name": "unstakedDeposit",
+        "name": "deposit",
         "type": "uint256"
       },
       {
         "name": "challengeID",
+        "type": "uint256"
+      },
+      {
+        "name": "challenger",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "challengeNonce",
+    "outputs": [
+      {
+        "name": "",
         "type": "uint256"
       }
     ],
@@ -112,32 +142,22 @@
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "voting",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "name": "_tokenAddr",
         "type": "address"
       },
       {
-        "name": "_plcrAddr",
+        "name": "_challengeFactoryAddr",
         "type": "address"
       },
       {
         "name": "_paramsAddr",
         "type": "address"
+      },
+      {
+        "name": "_name",
+        "type": "string"
       }
     ],
     "payable": false,
@@ -166,6 +186,11 @@
         "indexed": false,
         "name": "data",
         "type": "string"
+      },
+      {
+        "indexed": true,
+        "name": "applicant",
+        "type": "address"
       }
     ],
     "name": "_Application",
@@ -186,21 +211,38 @@
       },
       {
         "indexed": false,
+        "name": "challengeAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
         "name": "data",
         "type": "string"
       },
       {
-        "indexed": false,
-        "name": "commitEndDate",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "revealEndDate",
-        "type": "uint256"
+        "indexed": true,
+        "name": "challenger",
+        "type": "address"
       }
     ],
     "name": "_Challenge",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "listingHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "name": "challengeID",
+        "type": "uint256"
+      }
+    ],
+    "name": "_ChallengeStarted",
     "type": "event"
   },
   {
@@ -220,6 +262,11 @@
         "indexed": false,
         "name": "newTotal",
         "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "owner",
+        "type": "address"
       }
     ],
     "name": "_Deposit",
@@ -242,6 +289,11 @@
         "indexed": false,
         "name": "newTotal",
         "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "owner",
+        "type": "address"
       }
     ],
     "name": "_Withdrawal",
@@ -319,16 +371,6 @@
         "indexed": true,
         "name": "challengeID",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "rewardPool",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "totalTokens",
-        "type": "uint256"
       }
     ],
     "name": "_ChallengeFailed",
@@ -346,36 +388,9 @@
         "indexed": true,
         "name": "challengeID",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "rewardPool",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "totalTokens",
-        "type": "uint256"
       }
     ],
     "name": "_ChallengeSucceeded",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "name": "challengeID",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "name": "reward",
-        "type": "uint256"
-      }
-    ],
-    "name": "_RewardClaimed",
     "type": "event"
   },
   {
@@ -462,7 +477,7 @@
         "type": "string"
       }
     ],
-    "name": "challenge",
+    "name": "createChallenge",
     "outputs": [
       {
         "name": "challengeID",
@@ -485,51 +500,6 @@
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_challengeID",
-        "type": "uint256"
-      },
-      {
-        "name": "_salt",
-        "type": "uint256"
-      }
-    ],
-    "name": "claimReward",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_voter",
-        "type": "address"
-      },
-      {
-        "name": "_challengeID",
-        "type": "uint256"
-      },
-      {
-        "name": "_salt",
-        "type": "uint256"
-      }
-    ],
-    "name": "voterReward",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -582,86 +552,6 @@
     "outputs": [
       {
         "name": "exists",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "challengeExists",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_listingHash",
-        "type": "bytes32"
-      }
-    ],
-    "name": "challengeCanBeResolved",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_challengeID",
-        "type": "uint256"
-      }
-    ],
-    "name": "determineReward",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "_challengeID",
-        "type": "uint256"
-      },
-      {
-        "name": "_voter",
-        "type": "address"
-      }
-    ],
-    "name": "tokenClaims",
-    "outputs": [
-      {
-        "name": "",
         "type": "bool"
       }
     ],
