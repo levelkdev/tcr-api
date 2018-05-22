@@ -1,7 +1,6 @@
 import { contract } from './utils';
 import Component from './Component';
 import Proposal from './Proposal';
-import PLCRVoting from './PLCRVoting';
 import Challenge from './Challenge';
 
 class Parameterizer extends Component {
@@ -24,12 +23,6 @@ class Parameterizer extends Component {
 
   getChallenge(id) {
     return new Challenge(id, this);
-  }
-
-  async getPLCRVoting() {
-    let PLCRVotingAddress = await this.contract.methods.voting().call();
-
-    return new PLCRVoting(PLCRVotingAddress, this.provider);
   }
 
   get(param) {

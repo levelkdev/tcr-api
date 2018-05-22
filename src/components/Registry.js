@@ -3,7 +3,6 @@ import Component from './Component';
 import Account from './Account';
 import Parameterizer from './Parameterizer';
 import Listing from './Listing';
-import PLCRVoting from './PLCRVoting';
 import Challenge from './Challenge';
 
 class Registry extends Component {
@@ -30,12 +29,6 @@ class Registry extends Component {
 
   hasListing(hash) {
     return this.getListing(hash).exists();
-  }
-
-  async getPLCRVoting() {
-    let PLCRVotingAddress = await this.contract.methods.voting().call();
-
-    return new PLCRVoting(PLCRVotingAddress, this.provider);
   }
 
   async getAccount(owner) {
